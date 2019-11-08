@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 />
+        <title>JS DOM paragraph style</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+            body{
+                text-align: center;
+            }
+        
+        </style>
+
+    </head> 
+    <body>
+        <p id ='text'>JavaScript Exercises - w3resource</p> 
+        <div>
+            <button id="jsstyle" class="btn btn-sm btn-primary"
+                onclick="js_style()">Style</button>
+        </div>
+    </body>
+    <script>
+        function js_style(){
+            document.getElementById('text').style.fontFamily= "georgia";
+            document.getElementById('text').style.fontSize= "50px";
+            document.getElementById('text').style.color= "maroon";
+            document.getElementById('text').style.fontWeight="bold";
+            document.getElementById('text').style.fontStyle="italic";
+        }
+    
+    </script>
+</html>

@@ -1,0 +1,110 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <style>
+            body{
+                text-align: center;
+                padding: 10px;
+                margin: 10px;
+            }
+            .container{
+                background-color: lightyellow;
+                width:30%; 
+            }
+            #result{
+                color: maroon;
+                font-size: larger;
+                font-weight: bold;
+            }
+            .title{
+                padding: 15px;
+                border-bottom: 2px solid;
+                font-size: larger;
+                font-weight: bold;
+            }
+            .inputNum{
+                margin: 5px;
+            }
+            .btn{
+                margin: 5px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="title col-sm">Length Conversion</div>
+            <div class="inputNum">
+                <input type="number" id="userNum" class="col-sm-4" placeholder="number"> 
+            </div>
+
+            <div class="form-inline justify-content-center ">
+                <a class="col-sm-3 ab">From:</a> 
+                <select id="unitFrom" class="col-sm-3 unit">
+                    <option value="meters">Meters</option>
+                    <option value="kilometers">Kilometers</option>
+                    <option value="milimeters">Milimeters</option>
+                </select> 
+            </div>
+            <div class="form-inline justify-content-center">
+                <a class="col-sm-3">To:</a>
+                <select id="unitTo" class="col-sm-3 unit">
+                    <option value="meters">Meters</option>
+                    <option value="kilometers">Kilometers</option>
+                    <option value="milimeters">Milimeters</option>
+                </select> 
+              
+            </div>
+            <div>
+                    <button class="btn btn-sm btn-primary center-block" onclick="convertLength()">Submit</button>
+            </div>
+            <div>
+                <p id="result"> </p>
+            </div>
+
+        </div>
+
+    </body>
+    <script>
+        function convertLength(){
+            var num=document.getElementById('userNum').value;
+            var unitFrom= document.getElementById('unitFrom').value;
+            var unitTo= document.getElementById('unitTo').value;
+            var result;
+            var regex= /^[0-9]+$/;
+            if(!regex.test(num)){
+                document.getElementById('result').innerHTML= "Enter a valid number";
+            }else{
+                if(unitFrom == 'meters' && unitTo =='kilometers') {
+                    result= num/1000;
+                    document.getElementById('result').innerHTML= num+" "+unitFrom+" is "+result+ " "+ unitTo;
+                }else if(unitFrom == 'meters' && unitTo =='milimeters'){
+                    result= num*1000;
+                    document.getElementById('result').innerHTML= num+" "+unitFrom+" is "+result+ " "+ unitTo;
+                }else if(unitFrom == 'meters' && unitTo =='meters'){
+                    result= num;
+                    document.getElementById('result').innerHTML= num+" "+unitFrom+" is "+result+ " "+ unitTo;
+                }else if(unitFrom == 'kilometers' && unitTo =='meters'){
+                    result= num*1000;
+                    document.getElementById('result').innerHTML= num+" "+unitFrom+" is "+result+ " "+ unitTo;
+                }else if(unitFrom == 'kilometers' && unitTo =='milimeters'){
+                    result= num*1000*1000;
+                    document.getElementById('result').innerHTML= num+" "+unitFrom+" is "+result+ " "+ unitTo;
+                }else if(unitFrom == 'kilometers' && unitTo =='kilometers'){
+                    result= num;
+                    document.getElementById('result').innerHTML= num+" "+unitFrom+" is "+result+ " "+ unitTo;
+                }else if(unitFrom == 'milimeters' && unitTo =='meters'){
+                    result= num/1000;
+                    document.getElementById('result').innerHTML= num+" "+unitFrom+" is "+result+ " "+ unitTo;
+                }else if(unitFrom == 'milimeters' && unitTo =='kilometers'){
+                    result= num/(1000*1000);
+                    document.getElementById('result').innerHTML= num+" "+unitFrom+" is "+result+ " "+ unitTo;
+                }else{
+                    result= num;
+                    document.getElementById('result').innerHTML= num+" "+unitFrom+" is "+result+ " "+ unitTo;
+                }
+            }
+        }
+    </script>
+</html>
