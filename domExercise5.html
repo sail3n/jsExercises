@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Javascript Mouse Hover Action</title>
+        <style>
+            body{
+                text-align: center;
+                background-color: lightblue;
+            }
+            img{
+                width: 60px;
+                height: 60px;
+                opacity: 0.8;  
+                padding: 3px;
+            }
+            a{
+                float: right;
+                font-size: large;
+                padding: 2px;
+                top: 10px;
+                right: 70px;
+            }
+            h2{
+                border-bottom: 2px solid;
+                padding: 20px;
+            }
+            a,h2{
+                text-transform: uppercase;
+
+            }
+            .container{
+                width: 30%;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="container">
+            <div>
+                <h2>google services</h1>
+            </div>
+            <div>
+                <img class="col-sm-6" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" src="https://image.flaticon.com/icons/svg/281/281769.svg">
+                <a class="col-sm-6"onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" >google mail</a>
+            </div>
+            <div>
+                <img class="col-sm-6" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" src="https://image.flaticon.com/icons/svg/281/281767.svg">
+                <a class="col-sm-6"onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" >google maps</a>
+            </div>
+            <div>
+                <img class="col-sm-6" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" src="https://image.flaticon.com/icons/svg/281/281759.svg">
+                <a class="col-sm-6"onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" >google translate</a>
+            </div>
+            <div>
+                <img class="col-sm-6" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" src="https://image.flaticon.com/icons/svg/281/281766.svg">
+                <a class="col-sm-6"onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" >youtube</a>
+            </div>
+        </div>
+
+    </body>
+    <script>
+        function mouseOver(x){
+            x.style.opacity= '1';
+            x.style.color='red';
+            x.style.fontSize= 'larger';
+            
+        }
+        function mouseOut(x){
+            x.style.opacity= '0.8';
+            x.style.color='black';
+            x.style.fontSize='large';
+
+
+        }
+    
+    </script>
+</html>
